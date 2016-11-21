@@ -55,7 +55,7 @@
 <p>A painting <em>(aat:300033618)</em> is made of watercolor paint <em>(aat:300015045)</em> on a support <em>(aat:300014844)</em> made of canvas <em>(aat:300014078)</em>:</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;@context&quot;</span><span class="p">:</span> <span class="s2">&quot;http://azaroth42.github.io/context/1/full.jsonld&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://example.museum/objects/1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http:///objects/1&quot;</span><span class="p">,</span>
     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ManMadeObject&quot;</span><span class="p">,</span>
     <span class="nt">&quot;has_type&quot;</span><span class="p">:</span> <span class="s2">&quot;aat:300033618&quot;</span><span class="p">,</span>
     <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Painting&quot;</span><span class="p">,</span>
@@ -65,7 +65,7 @@
       <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;watercolor&quot;</span>
     <span class="p">},</span>
     <span class="nt">&quot;is_composed_of&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://example.museum/object/1/part/1&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http:///object/1/part/1&quot;</span><span class="p">,</span>
         <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;PhysicalObject&quot;</span><span class="p">,</span>
         <span class="nt">&quot;has_type&quot;</span><span class="p">:</span> <span class="s2">&quot;aat:300014844&quot;</span><span class="p">,</span>
         <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Canvas Support&quot;</span><span class="p">,</span>
@@ -92,13 +92,13 @@
 <p>An auction <em>(aat:300054751)</em> consists of many activities in which a particular lot is auctioned:</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;@context&quot;</span><span class="p">:</span> <span class="s2">&quot;http://azaroth42.github.io/context/1/full.jsonld&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://example.museum/activity/1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http:///activity/1&quot;</span><span class="p">,</span>
     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Activity&quot;</span><span class="p">,</span>
     <span class="nt">&quot;has_type&quot;</span><span class="p">:</span> <span class="s2">&quot;aat:300054751&quot;</span><span class="p">,</span>
     <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Auction&quot;</span><span class="p">,</span>
     <span class="nt">&quot;consists_of&quot;</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
-            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://example.museum/activity/1/part/1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http:///activity/1/part/1&quot;</span><span class="p">,</span>
             <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Activity&quot;</span><span class="p">,</span>
             <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Auction of Lot&quot;</span>
         <span class="p">}</span>
@@ -119,12 +119,12 @@
 <p>The city of Leiden <em>(tgn:7006809-place)</em> where Rembrandt was born is part of the Netherlands <em>(tgn:7016845-place)</em>:</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;@context&quot;</span><span class="p">:</span> <span class="s2">&quot;http://azaroth42.github.io/context/1/full.jsonld&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://example.museum/place/1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http:///place/1&quot;</span><span class="p">,</span>
     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Place&quot;</span><span class="p">,</span>
     <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Netherlands&quot;</span><span class="p">,</span>
     <span class="nt">&quot;exactMatch&quot;</span><span class="p">:</span> <span class="s2">&quot;tgn:7016845-place&quot;</span><span class="p">,</span>
     <span class="nt">&quot;spatially_contains&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://example.museum/place/1/part/1&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http:///place/1/part/1&quot;</span><span class="p">,</span>
         <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Place&quot;</span><span class="p">,</span>
         <span class="nt">&quot;exactMatch&quot;</span><span class="p">:</span> <span class="s2">&quot;tgn:7006809-place&quot;</span><span class="p">,</span>
         <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Leiden&quot;</span>
@@ -148,12 +148,12 @@
 <p><strong>Example:</strong></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;@context&quot;</span><span class="p">:</span> <span class="s2">&quot;http://azaroth42.github.io/context/1/full.jsonld&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://example.museum/infoObject/1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http:///infoObject/1&quot;</span><span class="p">,</span>
     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;InformationObject&quot;</span><span class="p">,</span>
     <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Content of Ledger 1&quot;</span><span class="p">,</span>
     <span class="nt">&quot;has_fragment&quot;</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
-            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://example.museum/infoObject/1/part/1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http:///infoObject/1/part/1&quot;</span><span class="p">,</span>
             <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;InformationObject&quot;</span><span class="p">,</span>
             <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Row 1&quot;</span>
         <span class="p">}</span>
@@ -171,11 +171,11 @@
 <p><strong>Example:</strong></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;@context&quot;</span><span class="p">:</span> <span class="s2">&quot;http://azaroth42.github.io/context/1/full.jsonld&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://example.museum/group/1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http:///group/1&quot;</span><span class="p">,</span>
     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Group&quot;</span><span class="p">,</span>
     <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Museum&quot;</span><span class="p">,</span>
     <span class="nt">&quot;has_current_or_former_member&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://example.museum/group/1/part/1&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http:///group/1/part/1&quot;</span><span class="p">,</span>
         <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Group&quot;</span><span class="p">,</span>
         <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Department&quot;</span>
     <span class="p">}</span>   
