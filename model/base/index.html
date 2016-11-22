@@ -116,50 +116,28 @@
 <li>A region (where an artist was born, for example) is part of a country</li>
 </ul>
 <p><strong>Example:</strong></p>
-<p>The city of Leiden <em>(tgn:7006809-place)</em> (where Rembrandt was born) is part of the Netherlands <em>(tgn:7016845-place)</em>:</p>
+<p>The "W02" gallery is part of the museum, which is in Los Angeles (tgn:7023900-place):</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;@context&quot;</span><span class="p">:</span> <span class="s2">&quot;http://azaroth42.github.io/museum-lod/ns/context/1/full.jsonld&quot;</span><span class="p">,</span> 
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://azaroth42.github.io/museum-lod/example/place/1&quot;</span><span class="p">,</span> 
   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Place&quot;</span><span class="p">,</span> 
-  <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;The Netherlands&quot;</span><span class="p">,</span> 
+  <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Museum Building&quot;</span><span class="p">,</span> 
+  <span class="nt">&quot;spatially_within&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://vocab.getty.edu/tgn/7023900-place&quot;</span><span class="p">,</span> 
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Place&quot;</span><span class="p">,</span> 
+    <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Los Angeles&quot;</span>
+  <span class="p">},</span> 
   <span class="nt">&quot;spatially_contains&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://azaroth42.github.io/museum-lod/example/place/1/part/1&quot;</span><span class="p">,</span> 
     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Place&quot;</span><span class="p">,</span> 
-    <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Leiden&quot;</span><span class="p">,</span> 
-    <span class="nt">&quot;exactMatch&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://azaroth42.github.io/museum-lod/example/place/tgn:7006809-place&quot;</span><span class="p">,</span> 
-      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Place&quot;</span>
-    <span class="p">}</span>
-  <span class="p">},</span> 
-  <span class="nt">&quot;exactMatch&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://azaroth42.github.io/museum-lod/example/place/tgn:7016845-place&quot;</span><span class="p">,</span> 
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Place&quot;</span>
+    <span class="nt">&quot;has_type&quot;</span><span class="p">:</span> <span class="s2">&quot;http://vocab.getty.edu/aat/300240057&quot;</span><span class="p">,</span> 
+    <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Gallery W204&quot;</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 
 
 <p><a href="/example/place/1.json">View Raw</a></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;@context&quot;</span><span class="p">:</span> <span class="s2">&quot;http://azaroth42.github.io/context/1/full.jsonld&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http:///place/1&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Place&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Netherlands&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;exactMatch&quot;</span><span class="p">:</span> <span class="s2">&quot;tgn:7016845-place&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;spatially_contains&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http:///place/1/part/1&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Place&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;exactMatch&quot;</span><span class="p">:</span> <span class="s2">&quot;tgn:7006809-place&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Leiden&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<div class="admonition note">
-<p class="admonition-title">Note: ExactMatch? Not Has Type?</p>
-<p>For why we use exactMatch instead of has_type, please see Section 4.</p>
-</div>
 <h3 id="14-information-objects"><a name="user-content-14-information-objects" href="#14-information-objects" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.4. Information Objects</h3>
 <p>CIDOC-CRM makes a distinction between the abstract information content and the physical carriers of that content. Using this separation, we can distinguish between the textual or otherwise semantic partitioning of the content (such as chapter, verse or scene) and the physical partitioning of the carriers of that content, using the Object model described above.</p>
 <p>Use cases for this pattern include:</p>
@@ -170,21 +148,20 @@
 </ul>
 <p><strong>Example:</strong></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;@context&quot;</span><span class="p">:</span> <span class="s2">&quot;http://azaroth42.github.io/context/1/full.jsonld&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http:///infoObject/1&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;InformationObject&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Content of Ledger 1&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;has_fragment&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http:///infoObject/1/part/1&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;InformationObject&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Row 1&quot;</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
+  <span class="nt">&quot;@context&quot;</span><span class="p">:</span> <span class="s2">&quot;http://azaroth42.github.io/museum-lod/ns/context/1/full.jsonld&quot;</span><span class="p">,</span> 
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://azaroth42.github.io/museum-lod/example/infoObject/1&quot;</span><span class="p">,</span> 
+  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;InformationObject&quot;</span><span class="p">,</span> 
+  <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Content of Ledger 1&quot;</span><span class="p">,</span> 
+  <span class="nt">&quot;has_section&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://azaroth42.github.io/museum-lod/example/infoObject/1/part/1&quot;</span><span class="p">,</span> 
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;InformationObject&quot;</span><span class="p">,</span> 
+    <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Content of Row 1&quot;</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 
 
+<p><a href="/example/infoObject/1.json">View Raw</a></p>
 <h3 id="15-organizations"><a name="user-content-15-organizations" href="#15-organizations" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.5 Organizations</h3>
 <p>Organizations are modeled as groups in CIDOC-CRM, which can have members that are part of that group.  The members can themselves be groups, allowing a hierarchy to be created in the same way as for parts of the classes above.</p>
 <p>Use cases for this pattern include:</p>
@@ -193,19 +170,22 @@
 </ul>
 <p><strong>Example:</strong></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;@context&quot;</span><span class="p">:</span> <span class="s2">&quot;http://azaroth42.github.io/context/1/full.jsonld&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http:///group/1&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Group&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Museum&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;has_current_or_former_member&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http:///group/1/part/1&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Group&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Department&quot;</span>
-    <span class="p">}</span>   
+  <span class="nt">&quot;@context&quot;</span><span class="p">:</span> <span class="s2">&quot;http://azaroth42.github.io/museum-lod/ns/context/1/full.jsonld&quot;</span><span class="p">,</span> 
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://azaroth42.github.io/museum-lod/example/group/1&quot;</span><span class="p">,</span> 
+  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Group&quot;</span><span class="p">,</span> 
+  <span class="nt">&quot;has_type&quot;</span><span class="p">:</span> <span class="s2">&quot;http://vocab.getty.edu/aat/300312281&quot;</span><span class="p">,</span> 
+  <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Museum Institution&quot;</span><span class="p">,</span> 
+  <span class="nt">&quot;has_current_or_former_member&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://azaroth42.github.io/museum-lod/example/group/1/part/1&quot;</span><span class="p">,</span> 
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Group&quot;</span><span class="p">,</span> 
+    <span class="nt">&quot;has_type&quot;</span><span class="p">:</span> <span class="s2">&quot;http://vocab.getty.edu/aat/300263534&quot;</span><span class="p">,</span> 
+    <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Department&quot;</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 
 
+<p><a href="/example/group/1.json">View Raw</a></p>
 <h2 id="2-statements-about-a-resource"><a name="user-content-2-statements-about-a-resource" href="#2-statements-about-a-resource" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2. Statements about a Resource</h2>
 <p>In many cases, current data does not support the level of specificity that CIDOC-CRM assumes.  For example, instead of a completely modeled set of parts with materials, many museum collection management systems allow only a single human-readable string for the "medium" or "materials statement".  The same is true in many other situations, including rights or allowable usage statements, dimensions, edition statements and so forth.  Any time that there is a description of the resource that has a more exact scope than just a general description, then this pattern can be used to record that descriptive text.</p>
 <p>The pattern makes use of the Linguistic Object class -- a class for resources that identify a particular piece of textual content.  These Linguistic Objects can then refer to any other resource to state what the content is about.</p>
