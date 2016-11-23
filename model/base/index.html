@@ -5,15 +5,15 @@
             rel="stylesheet" type="text/css">
             <title>Baseline Patterns</title>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="/museum-lod/media/css/style.css">
+        <link rel="stylesheet" href="/media/css/style.css">
     </head>
     <body>
         <nav>
                         <ul>
-    <li><a href="/museum-lod/index.html">Home</a></li>
-    <li><a href="/museum-lod/intro/index.html">Introduction</a></li>
-    <li><a href="/museum-lod/model/index.html">Model</a></li>
-    <li><a href="/museum-lod/api/index.html">Interactions</a></li>
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/intro/index.html">Introduction</a></li>
+    <li><a href="/model/index.html">Model</a></li>
+    <li><a href="/api/index.html">Interactions</a></li>
 </ul>
         </nav>
 
@@ -43,12 +43,14 @@
 <p>The CRM is a framework that must be extended via additional vocabularies and ontologies to be useful in specific circumstances.  The mechanism for doing this provided by the CRM is the predicate <code>crm:P2_has_type</code>, or <code>has_type</code> in the JSON-LD representation. This is used to refer to an externally managed controlled vocabulary of terms. The semantics of <code>has_type</code> can be understood as "is classified as" or perhaps "has semantic tag", rather than "is an instance of the class".</p>
 <p>It is useful to distinguish the predicate <code>rdf:type</code>, or <code>type</code> in the JSON-LD representation, which is the formal class of the resource. This is used almost exclusively for the CRM defined classes, with as few extensions as possible.</p>
 <p>While any external vocabulary of terms can be used, the Getty Vocabularies are used whenever possible for consistency. The set of terms used in the model is listed <a href="/model/vocabs/">here</a>. </p>
-<p>Use cases for this pattern are in almost every example, but include:
- * The type of an art object being a painting
- * The type of a description being a materials statement
- * The type of an identifier being an accession number
- * The type of an organization being a museum
- * The type of a place being a gallery</p>
+<p>Use cases for this pattern are in almost every example, but include:</p>
+<ul>
+<li>The type of an art object being a painting</li>
+<li>The type of a description being a materials statement</li>
+<li>The type of an identifier being an accession number</li>
+<li>The type of an organization being a museum</li>
+<li>The type of a place being a gallery</li>
+</ul>
 <p><strong>Example:</strong></p>
 <p>The type of the object (an instance of CRM's ManMadeObject class) is a painting <em>(aat:300033618)</em>:</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
@@ -61,8 +63,8 @@
 </pre></div>
 
 
-<p><a href="https://azaroth42.github.io/museum-lod/example/object/3.json">Raw</a> | 
-<a href="http://json-ld.org/playground/#startTab=tab-expanded&amp;json-ld=https://azaroth42.github.io/museum-lod/example/object/3.json">Playground</a></p>
+<p><a href="https://lod.shared-canvas.org/example/object/3.json">Raw</a> | 
+<a href="http://json-ld.org/playground/#startTab=tab-expanded&amp;json-ld=https://lod.shared-canvas.org/example/object/3.json">Playground</a></p>
 <h2 id="2-parts"><a name="user-content-2-parts" href="#2-parts" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2. Parts</h2>
 <p>The CRM allows the partitioning of many sorts of object, including those that are of most interest to the community. In particular,</p>
 <h3 id="21-objects"><a name="user-content-21-objects" href="#21-objects" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.1. Objects</h3>
@@ -103,8 +105,8 @@
 </pre></div>
 
 
-<p><a href="https://azaroth42.github.io/museum-lod/example/object/1.json">Raw</a> | 
-<a href="http://json-ld.org/playground/#startTab=tab-expanded&amp;json-ld=https://azaroth42.github.io/museum-lod/example/object/1.json">Playground</a></p>
+<p><a href="https://lod.shared-canvas.org/example/object/1.json">Raw</a> | 
+<a href="http://json-ld.org/playground/#startTab=tab-expanded&amp;json-ld=https://lod.shared-canvas.org/example/object/1.json">Playground</a></p>
 <h3 id="22-time-periods-and-events"><a name="user-content-22-time-periods-and-events" href="#22-time-periods-and-events" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.2. Time Periods and Events</h3>
 <p>In order to make assertions about events or time periods that occur within some larger context, the same pattern of asserting a part-of/has-part relationship is useful.</p>
 <p>Use cases for this pattern include:</p>
@@ -131,8 +133,8 @@
 </pre></div>
 
 
-<p><a href="https://azaroth42.github.io/museum-lod/example/activity/1.json">Raw</a> | 
-<a href="http://json-ld.org/playground/#startTab=tab-expanded&amp;json-ld=https://azaroth42.github.io/museum-lod/example/activity/1.json">Playground</a></p>
+<p><a href="https://lod.shared-canvas.org/example/activity/1.json">Raw</a> | 
+<a href="http://json-ld.org/playground/#startTab=tab-expanded&amp;json-ld=https://lod.shared-canvas.org/example/activity/1.json">Playground</a></p>
 <h3 id="23-locations"><a name="user-content-23-locations" href="#23-locations" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.3. Locations</h3>
 <p>Locations can be made more specific by saying that the smaller region is part of the larger region.</p>
 <p>Use cases for this pattern include:</p>
@@ -163,8 +165,8 @@
 </pre></div>
 
 
-<p><a href="https://azaroth42.github.io/museum-lod/example/place/1.json">Raw</a> | 
-<a href="http://json-ld.org/playground/#startTab=tab-expanded&amp;json-ld=https://azaroth42.github.io/museum-lod/example/place/1.json">Playground</a></p>
+<p><a href="https://lod.shared-canvas.org/example/place/1.json">Raw</a> | 
+<a href="http://json-ld.org/playground/#startTab=tab-expanded&amp;json-ld=https://lod.shared-canvas.org/example/place/1.json">Playground</a></p>
 <h3 id="24-information-objects"><a name="user-content-24-information-objects" href="#24-information-objects" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.4. Information Objects</h3>
 <p>CIDOC-CRM makes a distinction between the abstract information content and the physical carriers of that content. Using this separation, we can distinguish between the textual or otherwise semantic partitioning of the content (such as chapter, verse or scene) and the physical partitioning of the carriers of that content, using the Object model described above.</p>
 <p>Use cases for this pattern include:</p>
@@ -189,8 +191,8 @@
 </pre></div>
 
 
-<p><a href="https://azaroth42.github.io/museum-lod/example/infoObject/1.json">Raw</a> | 
-<a href="http://json-ld.org/playground/#startTab=tab-expanded&amp;json-ld=https://azaroth42.github.io/museum-lod/example/infoObject/1.json">Playground</a></p>
+<p><a href="https://lod.shared-canvas.org/example/infoObject/1.json">Raw</a> | 
+<a href="http://json-ld.org/playground/#startTab=tab-expanded&amp;json-ld=https://lod.shared-canvas.org/example/infoObject/1.json">Playground</a></p>
 <h3 id="25-organizations"><a name="user-content-25-organizations" href="#25-organizations" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.5 Organizations</h3>
 <p>Organizations are modeled as groups in CIDOC-CRM, which can have members that are part of that group.  The members can themselves be groups, allowing a hierarchy to be created in the same way as for parts of the classes above.</p>
 <p>Use cases for this pattern include:</p>
@@ -215,8 +217,8 @@
 </pre></div>
 
 
-<p><a href="https://azaroth42.github.io/museum-lod/example/group/1.json">Raw</a> | 
-<a href="http://json-ld.org/playground/#startTab=tab-expanded&amp;json-ld=https://azaroth42.github.io/museum-lod/example/group/1.json">Playground</a></p>
+<p><a href="https://lod.shared-canvas.org/example/group/1.json">Raw</a> | 
+<a href="http://json-ld.org/playground/#startTab=tab-expanded&amp;json-ld=https://lod.shared-canvas.org/example/group/1.json">Playground</a></p>
 <h2 id="3-statements-about-a-resource"><a name="user-content-3-statements-about-a-resource" href="#3-statements-about-a-resource" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3. Statements about a Resource</h2>
 <p>In many cases, current data does not support the level of specificity that CIDOC-CRM assumes.  For example, instead of a completely modeled set of parts with materials, many museum collection management systems allow only a single human-readable string for the "medium" or "materials statement".  The same is true in many other situations, including rights or allowable usage statements, dimensions, edition statements and so forth.  Any time that there is a description of the resource that has a more exact scope than just a general description, then this pattern can be used to record that descriptive text.</p>
 <p>The pattern makes use of the Linguistic Object class -- a class for resources that identify a particular piece of textual content.  These Linguistic Objects can then refer to any other resource to state what the content is about.</p>
@@ -245,8 +247,8 @@
 </pre></div>
 
 
-<p><a href="https://azaroth42.github.io/museum-lod/example/object/2.json">Raw</a> | 
-<a href="http://json-ld.org/playground/#startTab=tab-expanded&amp;json-ld=https://azaroth42.github.io/museum-lod/example/object/2.json">Playground</a></p>        </article>
+<p><a href="https://lod.shared-canvas.org/example/object/2.json">Raw</a> | 
+<a href="http://json-ld.org/playground/#startTab=tab-expanded&amp;json-ld=https://lod.shared-canvas.org/example/object/2.json">Playground</a></p>        </article>
 
         <footer>
         Contact: rsanderson@getty.edu
