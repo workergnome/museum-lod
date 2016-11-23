@@ -25,17 +25,52 @@
 <div class="toc">
 <ul>
 <li><a href="#introduction">Introduction</a></li>
+<li><a href="#example">Example</a></li>
 <li><a href="#context-design">Context Design</a></li>
 <li><a href="#context">Context</a></li>
-<li><a href="#property-key">| Property | Key |</a></li>
 </ul>
 </div>
 <hr />
 <h2 id="introduction"><a name="user-content-introduction" href="#introduction" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Introduction</h2>
 <p>JSON-LD is a Linked Open Data serialization using the popular JSON (Javascript Object Notation) format that is convenient for both backend and browser based development.  It is specified by the <a href="https://www.w3.org/TR/json-ld/">W3C</a> as an official serialization. Continued development work happens in the JSON for Linking Data W3C <a href="https://www.w3.org/community/json-ld/">Community Group</a>.</p>
 <p>The serialization for JSON-LD is friendly to developers through the use of context documents that specify the mapping between the key used in the json object and the RDF predicate used in the model.  This abstraction allows the developer to work with existing patterns and frameworks, while the data is still managed as a graph underneath.  This document describes the context used for CIDOC-CRM and other ontologies.</p>
+<p>The context for the first version of the full mapping for the model is published as:</p>
+<blockquote>
+<p><code>https://lod.shared-canvas.org/ns/context/1/full.jsonld</code></p>
+</blockquote>
+<h2 id="example"><a name="user-content-example" href="#example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Example</h2>
+<p>The examples throughout the documentation use the JSON-LD serialization.  Each has a link to the raw JSON-LD, and to load it into the invaluable JSON-LD playground where you can explore the details.  Instead of trying to describe all of the predicates and classes (for that just read the CIDOC-CRM specification), we present the models for the known use cases in an attempt to be more practical and results oriented.</p>
+<p>An example of the JSON-LD serialization for a painting, that is made of watercolor on a canvas support:</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;@context&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/ns/context/1/full.jsonld&quot;</span><span class="p">,</span> 
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/object/1&quot;</span><span class="p">,</span> 
+  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ManMadeObject&quot;</span><span class="p">,</span> 
+  <span class="nt">&quot;has_type&quot;</span><span class="p">:</span> <span class="s2">&quot;aat:300033618&quot;</span><span class="p">,</span> 
+  <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Painting&quot;</span><span class="p">,</span> 
+  <span class="nt">&quot;made_of&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://vocab.getty.edu/aat/300015045&quot;</span><span class="p">,</span> 
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Material&quot;</span><span class="p">,</span> 
+    <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;watercolor&quot;</span>
+  <span class="p">},</span> 
+  <span class="nt">&quot;is_composed_of&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/object/1/part/1&quot;</span><span class="p">,</span> 
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;PhysicalThing&quot;</span><span class="p">,</span> 
+    <span class="nt">&quot;has_type&quot;</span><span class="p">:</span> <span class="s2">&quot;aat:300014844&quot;</span><span class="p">,</span> 
+    <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Canvas Support&quot;</span><span class="p">,</span> 
+    <span class="nt">&quot;made_of&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://vocab.getty.edu/aat/300014078&quot;</span><span class="p">,</span> 
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Material&quot;</span><span class="p">,</span> 
+      <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;canvas&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p><a href="https://lod.shared-canvas.org/example/object/1.json">Raw</a> | 
+<a href="http://json-ld.org/playground/#startTab=tab-expanded&amp;json-ld=https://lod.shared-canvas.org/example/object/1.json">Playground</a></p>
 <h2 id="context-design"><a name="user-content-context-design" href="#context-design" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Context Design</h2>
-<p>The context has some design constraints that it is useful to understand before looking at the mapping itself.  In particular:</p>
+<p>The important part of the JSON-LD serialization is the shared context document.  This context has some design constraints that it is useful to understand before looking at the data model and mapping from the ontology.  In particular:</p>
 <ul>
 <li>The resulting JSON must be <strong>valid</strong> Linked Open Data and valid JSON-LD.  There are patterns that are valid in JSON that are not valid in JSON-LD, such as an array of arrays.  The nested object structure in the JSON is a result of the graph of resources. </li>
 <li>The resulting JSON must be <strong>understandable</strong> by developers who are unfamiliar with both the model and RDF in general. If the target technical audience was developers who had the full suite of RDF tools at their disposal, then Turtle and SPARQL would likely be preferable.  The serialization instead tries to make the content as accessible as the model will allow.</li>
@@ -53,43 +88,137 @@
 <p>The following patterns are used to create the JSON-LD keys from the CIDOC-CRM ontology:</p>
 <ul>
 <li>Remove the prefix numbers (<code>Activity</code> not <code>E7_Activity</code>)</li>
-<li>Remove dashes (-) (<code>has_timespan</code> not <code>has_time-span</code>)</li>
+<li>Remove dashes (<code>has_timespan</code> not <code>has_time-span</code>)</li>
 <li>Use upper CamelCase for classes (<code>TransferOfCustody</code> not <code>Transfer_of_Custody</code>)</li>
 <li>Use lower snake_case for properties (<code>is_identified_by</code>)</li>
 <li>Remove CRM namespace from classes and properties (<code>Production</code> not <code>crm:Production</code>)</li>
 <li>Remove <code>@</code> symbols (<code>id</code> not <code>@id</code>)</li>
 <li>Rename properties with collisions, from furthest down the hierarchy first, with a first effort of adding the range's class to the predicate name, but preferring a human understandable term </li>
+<li>Include prefixes for commonly used ontologies (<code>skos</code>, <code>schema</code>, <code>rdf</code>) and vocabularies (<code>aat</code>, <code>tgn</code>, <code>geonames</code>)</li>
 </ul>
-<p>The collisions have been renamed as follows:</p>
-<h2 id="property-key"><a name="user-content-property-key" href="#property-key" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>| Property | Key |</h2>
-<p>| P45 | made_of |
-| P7i | location_of |
-| P5 | has_subState |
-| P5i | is_subState_of |
-| P20i | was_specific_purpose_of |
-| P42 | assigned_type |
-| P42i | type_was_assigned_by |
-| P37 | assigned_identifier |
-| P37i | identifier_was_assigned_by |
-| P46i | physically_part_of |
-| P86 | temporally_within |
-| P86i | temporally_contains |
-| P89 | spatially_within |
-| P89i | spatially_contains |
-| P106 | has_section |
-| P106i | is_section_of |
-| P78 | time_is_identified_by |
-| P78i | identifies_time |
-| P87 | place_is_identified_by |
-| P87i | identifies_place |
-| P131 | actor_is_identified_by |
-| P131i | identifies_actor |
-| P149 | concept_is_identified_by |
-| P149i | identifies_concept |
-| P151i | participated_in_formation |
-| P165i | is_included_in |
-| P132 | volume_overlaps_with |
-| P135i | type_was_created_by |</p>        </article>
+<p>The name collisions have been resolved as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P45</td>
+<td>made_of</td>
+</tr>
+<tr>
+<td>P7i</td>
+<td>location_of</td>
+</tr>
+<tr>
+<td>P5</td>
+<td>has_subState</td>
+</tr>
+<tr>
+<td>P5i</td>
+<td>is_subState_of</td>
+</tr>
+<tr>
+<td>P20i</td>
+<td>was_specific_purpose_of</td>
+</tr>
+<tr>
+<td>P42</td>
+<td>assigned_type</td>
+</tr>
+<tr>
+<td>P42i</td>
+<td>type_was_assigned_by</td>
+</tr>
+<tr>
+<td>P37</td>
+<td>assigned_identifier</td>
+</tr>
+<tr>
+<td>P37i</td>
+<td>identifier_was_assigned_by</td>
+</tr>
+<tr>
+<td>P46i</td>
+<td>physically_part_of</td>
+</tr>
+<tr>
+<td>P86</td>
+<td>temporally_within</td>
+</tr>
+<tr>
+<td>P86i</td>
+<td>temporally_contains</td>
+</tr>
+<tr>
+<td>P89</td>
+<td>spatially_within</td>
+</tr>
+<tr>
+<td>P89i</td>
+<td>spatially_contains</td>
+</tr>
+<tr>
+<td>P106</td>
+<td>has_section</td>
+</tr>
+<tr>
+<td>P106i</td>
+<td>is_section_of</td>
+</tr>
+<tr>
+<td>P78</td>
+<td>time_is_identified_by</td>
+</tr>
+<tr>
+<td>P78i</td>
+<td>identifies_time</td>
+</tr>
+<tr>
+<td>P87</td>
+<td>place_is_identified_by</td>
+</tr>
+<tr>
+<td>P87i</td>
+<td>identifies_place</td>
+</tr>
+<tr>
+<td>P131</td>
+<td>actor_is_identified_by</td>
+</tr>
+<tr>
+<td>P131i</td>
+<td>identifies_actor</td>
+</tr>
+<tr>
+<td>P149</td>
+<td>concept_is_identified_by</td>
+</tr>
+<tr>
+<td>P149i</td>
+<td>identifies_concept</td>
+</tr>
+<tr>
+<td>P151i</td>
+<td>participated_in_formation</td>
+</tr>
+<tr>
+<td>P165i</td>
+<td>is_included_in</td>
+</tr>
+<tr>
+<td>P132</td>
+<td>volume_overlaps_with</td>
+</tr>
+<tr>
+<td>P135i</td>
+<td>type_was_created_by</td>
+</tr>
+</tbody>
+</table>        </article>
 
         <footer>
         Contact: rsanderson@getty.edu
