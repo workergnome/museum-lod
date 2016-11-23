@@ -3,7 +3,7 @@
     <head>
         <link href="http://fonts.googleapis.com/css?family=Anton"
             rel="stylesheet" type="text/css">
-            <title></title>
+            <title>Museum Data Model</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="/media/css/style.css">
     </head>
@@ -17,12 +17,11 @@
 </ul>
         </nav>
 
-        <h1></h1>
+        <h1>Museum Data Model</h1>
         <hr/>
 
         <article id="content">
-            <h1 id="museum-data-model"><a name="user-content-museum-data-model" href="#museum-data-model" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Museum Data Model</h1>
-<p>The desired target model for Linked Open Data in the museum domain is one with the following properties:</p>
+            <p>The desired target model for Linked Open Data in the museum domain is one with the following properties:</p>
 <ul>
 <li>Captures as much of the information that we know about the resources as possible</li>
 <li>Can be easily and predictably transformed to a <a href="/api/">simpler and more usable representation</a> that is still Linked Open Data</li>
@@ -41,25 +40,19 @@
 <ul>
 <li><a href="http://www.cidoc-crm.org/">CIDOC-CRM</a> as the core ontology, giving an event-based paradigm</li>
 <li>The <a href="http://vocab.getty.edu/">Getty Vocabularies</a> as core sources of identity</li>
-<li><a href="https://www.w3.org/TR/json-ld/">JSON-LD</a> as the primary target serialization</li>
+<li><a href="jsonld/">JSON-LD</a> as the primary target serialization</li>
 </ul>
 <h2 id="model-components"><a name="user-content-model-components" href="#model-components" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Model Components</h2>
-<p>The model can be treated as interlinking components that describe aspects of the events of interest:</p>
+<p>The model can be treated as interlinking components that describe aspects of the events of interest. The target context for JSON-LD is described first, as the examples within the other documentation use it for readability.</p>
 <ul>
+<li><a href="jsonld/">Target Serialization</a></li>
 <li><a href="base/">Baseline Patterns</a></li>
 <li><a href="provenance/">Object Provenance</a></li>
 <li><a href="object/">Object Description</a></li>
 <li><a href="actor/">Actors</a> (People, Organizations)</li>
 <li><a href="place/">Places</a></li>
 <li><a href="exhibition/">Exhibitions</a></li>
-</ul>
-<h2 id="sources-of-identity"><a name="user-content-sources-of-identity" href="#sources-of-identity" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Sources of Identity</h2>
-<p>Re-list in terms of what is being identified</p>
-<ul>
-<li><a href="identity/aat/">AAT</a></li>
-<li><a href="identity/ulan/">ULAN</a></li>
-<li><a href="identity/tgn/">TGN</a></li>
-<li><a href="identity/iconclass/">IconClass</a></li>
+<li><a href="vocab/">Sources of Identity</a></li>
 </ul>
 <h2 id="scope-limitations"><a name="user-content-scope-limitations" href="#scope-limitations" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Scope Limitations</h2>
 <ul>

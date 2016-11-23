@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link href="http://fonts.googleapis.com/css?family=Anton"
+            rel="stylesheet" type="text/css">
+            <title>JSON-LD Serialization</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="/media/css/style.css">
+    </head>
+    <body>
+        <nav>
+                        <ul>
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/intro/index.html">Introduction</a></li>
+    <li><a href="/model/index.html">Model</a></li>
+    <li><a href="/api/index.html">Interactions</a></li>
+</ul>
+        </nav>
+
+        <h1>JSON-LD Serialization</h1>
+        <hr/>
+
+        <article id="content">
+            <p><strong>Table of Contents</strong></p>
+<div class="toc">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#context-design">Context Design</a></li>
+<li><a href="#context">Context</a></li>
+<li><a href="#property-key">| Property | Key |</a></li>
+</ul>
+</div>
+<hr />
+<h2 id="introduction"><a name="user-content-introduction" href="#introduction" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Introduction</h2>
+<p>JSON-LD is a Linked Open Data serialization using the popular JSON (Javascript Object Notation) format that is convenient for both backend and browser based development.  It is specified by the <a href="https://www.w3.org/TR/json-ld/">W3C</a> as an official serialization. Continued development work happens in the JSON for Linking Data W3C <a href="https://www.w3.org/community/json-ld/">Community Group</a>.</p>
+<p>The serialization for JSON-LD is friendly to developers through the use of context documents that specify the mapping between the key used in the json object and the RDF predicate used in the model.  This abstraction allows the developer to work with existing patterns and frameworks, while the data is still managed as a graph underneath.  This document describes the context used for CIDOC-CRM and other ontologies.</p>
+<h2 id="context-design"><a name="user-content-context-design" href="#context-design" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Context Design</h2>
+<p>The context has some design constraints that it is useful to understand before looking at the mapping itself.  In particular:</p>
+<ul>
+<li>The resulting JSON must be <strong>valid</strong> Linked Open Data and valid JSON-LD.  There are patterns that are valid in JSON that are not valid in JSON-LD, such as an array of arrays.  The nested object structure in the JSON is a result of the graph of resources. </li>
+<li>The resulting JSON must be <strong>understandable</strong> by developers who are unfamiliar with both the model and RDF in general. If the target technical audience was developers who had the full suite of RDF tools at their disposal, then Turtle and SPARQL would likely be preferable.  The serialization instead tries to make the content as accessible as the model will allow.</li>
+<li>The resulting JSON must be <strong>usable</strong> regardless of programming language or application environment to ensure the widest possible adoption and value. The context is designed to allow as many of conveniences as possible to be used, and to maximize the situations in which it can be used.</li>
+</ul>
+<p>There are some challenges overlaid on these principles from the CIDOC-CRM ontology.</p>
+<ul>
+<li>The use of numbers in the class and properties runs counter to the understandable and usable principles.</li>
+<li>The use of - in the names of some classes and properties reduces usability, as it is not allowed as the name of a property in most programming languages.</li>
+<li>The use of the same name for a property, minus its number, is not possible in JSON-LD as the keys must map uniquely to a predicate.</li>
+<li>The use of underscores in class or property names is not common in Javascript or in RDF ontologies, which tend to prefer camelCase.</li>
+</ul>
+<p>The context tries to manage all of these issues in a practical and programmatically accesible way from the ontology definition.</p>
+<h2 id="context"><a name="user-content-context" href="#context" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Context</h2>
+<p>The following patterns are used to create the JSON-LD keys from the CIDOC-CRM ontology:</p>
+<ul>
+<li>Remove the prefix numbers (<code>Activity</code> not <code>E7_Activity</code>)</li>
+<li>Remove dashes (-) (<code>has_timespan</code> not <code>has_time-span</code>)</li>
+<li>Use upper CamelCase for classes (<code>TransferOfCustody</code> not <code>Transfer_of_Custody</code>)</li>
+<li>Use lower snake_case for properties (<code>is_identified_by</code>)</li>
+<li>Remove CRM namespace from classes and properties (<code>Production</code> not <code>crm:Production</code>)</li>
+<li>Remove <code>@</code> symbols (<code>id</code> not <code>@id</code>)</li>
+<li>Rename properties with collisions, from furthest down the hierarchy first, with a first effort of adding the range's class to the predicate name, but preferring a human understandable term </li>
+</ul>
+<p>The collisions have been renamed as follows:</p>
+<h2 id="property-key"><a name="user-content-property-key" href="#property-key" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>| Property | Key |</h2>
+<p>| P45 | made_of |
+| P7i | location_of |
+| P5 | has_subState |
+| P5i | is_subState_of |
+| P20i | was_specific_purpose_of |
+| P42 | assigned_type |
+| P42i | type_was_assigned_by |
+| P37 | assigned_identifier |
+| P37i | identifier_was_assigned_by |
+| P46i | physically_part_of |
+| P86 | temporally_within |
+| P86i | temporally_contains |
+| P89 | spatially_within |
+| P89i | spatially_contains |
+| P106 | has_section |
+| P106i | is_section_of |
+| P78 | time_is_identified_by |
+| P78i | identifies_time |
+| P87 | place_is_identified_by |
+| P87i | identifies_place |
+| P131 | actor_is_identified_by |
+| P131i | identifies_actor |
+| P149 | concept_is_identified_by |
+| P149i | identifies_concept |
+| P151i | participated_in_formation |
+| P165i | is_included_in |
+| P132 | volume_overlaps_with |
+| P135i | type_was_created_by |</p>        </article>
+
+        <footer>
+        Contact: rsanderson@getty.edu
+        </footer>
+            </body>
+</html>
