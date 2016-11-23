@@ -1,10 +1,8 @@
-/index.html
-  X-Test: Rob
-
-/example/object/1.json
-  Access-Control-Allow-Origin: *
 
 /example/*
+  Access-Control-Allow-Origin: *
+
+/ns/*
   Access-Control-Allow-Origin: *
 
 /*.jsonld
