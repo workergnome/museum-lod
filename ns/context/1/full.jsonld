@@ -1296,9 +1296,7 @@
     "culture": {
       "@id": "schema:genre"
     }, 
-    "Payment": [
-      "pi:Payment"
-    ], 
+    "Payment": "pi:Payment", 
     "paid_from": {
       "@id": "pi:paid_from", 
       "@type": "@id"
