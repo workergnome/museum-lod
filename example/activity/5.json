@@ -1,0 +1,37 @@
+{
+  "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
+  "id": "https://lod.shared-canvas.org/example/activity/5", 
+  "type": "Purchase", 
+  "transferred_title_of": {
+    "id": "https://lod.shared-canvas.org/example/object/1", 
+    "type": "ManMadeObject", 
+    "label": "Example Painting", 
+    "classified_as": "aat:300033618"
+  }, 
+  "transferred_title_from": {
+    "id": "https://lod.shared-canvas.org/example/actor/1", 
+    "type": "Actor", 
+    "label": "Seller"
+  }, 
+  "transferred_title_to": {
+    "id": "https://lod.shared-canvas.org/example/actor/2", 
+    "type": "Actor", 
+    "label": "Buyer"
+  }, 
+  "consists_of": {
+    "id": "https://lod.shared-canvas.org/example/activity/6", 
+    "type": "Payment", 
+    "paid_amount": {
+      "id": "https://lod.shared-canvas.org/example/money/1", 
+      "type": "MonetaryAmount", 
+      "value": 100, 
+      "currency": {
+        "id": "https://lod.shared-canvas.org/example/money/2", 
+        "type": "Currency", 
+        "label": "dollars"
+      }
+    }, 
+    "paid_from": "https://lod.shared-canvas.org/example/actor/2", 
+    "paid_to": "https://lod.shared-canvas.org/example/actor/1"
+  }
+}

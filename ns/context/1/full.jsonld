@@ -13,6 +13,8 @@
     "ulan": "http://vocab.getty.edu/ulan/",
     "tgn": "http://vocab.getty.edu/tgn/",
 
+    "pi": "http://lod.getty.edu/prov/",
+
     "id": {
       "@id": "@id", 
       "@type": "@id"
@@ -1294,6 +1296,21 @@
     }, 
     "culture": {
       "@id": "schema:genre"
+    },
+
+    "Payment": "pi:Payment",
+    "paid_from": {
+      "@id": "pi:paid_from",
+      "@type": "@id"
+    },
+    "paid_to": {
+      "@id": "pi:paid_to",
+      "@type": "@id"
+    },
+    "paid_amount": {
+      "@id": "pi:paid_amount",
+      "@type": "@id"
     }
+
   }
 }
