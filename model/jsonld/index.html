@@ -45,8 +45,8 @@
   <span class="nt">&quot;@context&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/ns/context/1/full.jsonld&quot;</span><span class="p">,</span> 
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/object/1&quot;</span><span class="p">,</span> 
   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ManMadeObject&quot;</span><span class="p">,</span> 
-  <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Painting&quot;</span><span class="p">,</span> 
   <span class="nt">&quot;classified_as&quot;</span><span class="p">:</span> <span class="s2">&quot;aat:300033618&quot;</span><span class="p">,</span> 
+  <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Painting&quot;</span><span class="p">,</span> 
   <span class="nt">&quot;made_of&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://vocab.getty.edu/aat/300015045&quot;</span><span class="p">,</span> 
     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Material&quot;</span><span class="p">,</span> 
@@ -55,8 +55,8 @@
   <span class="nt">&quot;part&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/object/1/part/1&quot;</span><span class="p">,</span> 
     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;PhysicalThing&quot;</span><span class="p">,</span> 
-    <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Canvas Support&quot;</span><span class="p">,</span> 
     <span class="nt">&quot;classified_as&quot;</span><span class="p">:</span> <span class="s2">&quot;aat:300014844&quot;</span><span class="p">,</span> 
+    <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Canvas Support&quot;</span><span class="p">,</span> 
     <span class="nt">&quot;made_of&quot;</span><span class="p">:</span> <span class="p">{</span>
       <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://vocab.getty.edu/aat/300014078&quot;</span><span class="p">,</span> 
       <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Material&quot;</span><span class="p">,</span> 
@@ -93,10 +93,12 @@
 <li>Use lower snake_case for properties (<code>is_identified_by</code>)</li>
 <li>Remove CRM namespace from classes and properties (<code>Production</code> not <code>crm:Production</code>)</li>
 <li>Remove <code>@</code> symbols (<code>id</code> not <code>@id</code>)</li>
+<li>Remove <code>is_</code>, <code>was_</code>, <code>has_</code> and <code>had_</code> from the beginning of properties, as being inconsistently applied in the ontology and hard to remember (<code>created</code> not <code>has_created</code> ; compare <code>destroyed</code>)</li>
 <li>Rename properties with collisions, from furthest down the hierarchy first, with a first effort of adding the range's class to the predicate name, but preferring a human understandable term </li>
 <li>Include prefixes for commonly used ontologies (<code>skos</code>, <code>schema</code>, <code>rdf</code>) and vocabularies (<code>aat</code>, <code>tgn</code>, <code>geonames</code>)</li>
 </ul>
 <p>The name collisions have been resolved as follows:</p>
+<blockquote>
 <table>
 <thead>
 <tr>
@@ -115,15 +117,15 @@
 </tr>
 <tr>
 <td>P5</td>
-<td>has_subState</td>
+<td>subState</td>
 </tr>
 <tr>
 <td>P5i</td>
-<td>is_subState_of</td>
+<td>subState_of</td>
 </tr>
 <tr>
 <td>P20i</td>
-<td>was_specific_purpose_of</td>
+<td>specific_purpose_of</td>
 </tr>
 <tr>
 <td>P42</td>
@@ -131,7 +133,7 @@
 </tr>
 <tr>
 <td>P42i</td>
-<td>type_was_assigned_by</td>
+<td>type_assigned_by</td>
 </tr>
 <tr>
 <td>P37</td>
@@ -139,11 +141,15 @@
 </tr>
 <tr>
 <td>P37i</td>
-<td>identifier_was_assigned_by</td>
+<td>identifier_assigned_by</td>
+</tr>
+<tr>
+<td>P46</td>
+<td>part</td>
 </tr>
 <tr>
 <td>P46i</td>
-<td>physically_part_of</td>
+<td>part_of</td>
 </tr>
 <tr>
 <td>P86</td>
@@ -162,16 +168,12 @@
 <td>spatially_contains</td>
 </tr>
 <tr>
-<td>P106</td>
-<td>has_section</td>
-</tr>
-<tr>
 <td>P106i</td>
-<td>is_section_of</td>
+<td>composed_from</td>
 </tr>
 <tr>
 <td>P78</td>
-<td>time_is_identified_by</td>
+<td>time_identified_by</td>
 </tr>
 <tr>
 <td>P78i</td>
@@ -179,7 +181,7 @@
 </tr>
 <tr>
 <td>P87</td>
-<td>place_is_identified_by</td>
+<td>place_identified_by</td>
 </tr>
 <tr>
 <td>P87i</td>
@@ -187,7 +189,7 @@
 </tr>
 <tr>
 <td>P131</td>
-<td>actor_is_identified_by</td>
+<td>actor_identified_by</td>
 </tr>
 <tr>
 <td>P131i</td>
@@ -195,11 +197,31 @@
 </tr>
 <tr>
 <td>P149</td>
-<td>concept_is_identified_by</td>
+<td>concept_identified_by</td>
 </tr>
 <tr>
 <td>P149i</td>
 <td>identifies_concept</td>
+</tr>
+<tr>
+<td>P35i</td>
+<td>condition_identified_by</td>
+</tr>
+<tr>
+<td>P90</td>
+<td>has_value</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>classified_as</td>
+</tr>
+<tr>
+<td>P133</td>
+<td>distinct_from</td>
+</tr>
+<tr>
+<td>P164i</td>
+<td>timespan_of_presence</td>
 </tr>
 <tr>
 <td>P151i</td>
@@ -207,7 +229,7 @@
 </tr>
 <tr>
 <td>P165i</td>
-<td>is_included_in</td>
+<td>included_in</td>
 </tr>
 <tr>
 <td>P132</td>
@@ -215,10 +237,11 @@
 </tr>
 <tr>
 <td>P135i</td>
-<td>type_was_created_by</td>
+<td>type_created_by</td>
 </tr>
 </tbody>
-</table>        </article>
+</table>
+</blockquote>        </article>
 
         <footer>
         Contact: rsanderson@getty.edu

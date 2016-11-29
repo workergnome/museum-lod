@@ -11,8 +11,8 @@
   "produced": {
     "id": "https://lod.shared-canvas.org/example/object/1", 
     "type": "ManMadeObject", 
-    "label": "Example Painting", 
-    "classified_as": "aat:300033618"
+    "classified_as": "aat:300033618", 
+    "label": "Example Painting"
   }, 
   "took_place_at": {
     "id": "https://lod.shared-canvas.org/example/place/1", 

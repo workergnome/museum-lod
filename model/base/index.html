@@ -24,13 +24,13 @@
             <p><strong>Table of Contents</strong></p>
 <div class="toc">
 <ul>
-<li><a href="#1-types">1. Types</a></li>
+<li><a href="#1-types-classifications">1. Types / Classifications</a></li>
 <li><a href="#2-parts">2. Parts</a><ul>
 <li><a href="#21-objects">2.1. Objects</a></li>
 <li><a href="#22-time-periods-and-events">2.2. Time Periods and Events</a></li>
 <li><a href="#23-locations">2.3. Locations</a></li>
 <li><a href="#24-information-objects">2.4. Information Objects</a></li>
-<li><a href="#25-organizations">2.5 Organizations</a></li>
+<li><a href="#25-organizations">2.5. Organizations</a></li>
 </ul>
 </li>
 <li><a href="#3-statements-about-a-resource">3. Statements about a Resource</a></li>
@@ -39,9 +39,9 @@
 <hr />
 <p>It is useful to have some common baseline patterns to follow when using a very open ontology, like CIDOC-CRM.  From working with the datasets of almost 20 museums, the following patterns have been agreed on as useful ways to think about our data.</p>
 <p>These patterns are presented below with examples of how they are used in practice, but these are not intended to be exhaustive.  The documentation for the different resource types will include more information about how they are used in different circumstances.</p>
-<h2 id="1-types"><a name="user-content-1-types" href="#1-types" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1. Types</h2>
-<p>The CRM is a framework that must be extended via additional vocabularies and ontologies to be useful in specific circumstances.  The mechanism for doing this provided by the CRM is the predicate <code>crm:P2_has_type</code>, or <code>has_type</code> in the JSON-LD representation. This is used to refer to an externally managed controlled vocabulary of terms. The semantics of <code>has_type</code> can be understood as "is classified as" or perhaps "has semantic tag", rather than "is an instance of the class".</p>
-<p>It is useful to distinguish the predicate <code>rdf:type</code>, or <code>type</code> in the JSON-LD representation, which is the formal class of the resource. This is used almost exclusively for the CRM defined classes, with as few extensions as possible.</p>
+<h2 id="1-types-classifications"><a name="user-content-1-types-classifications" href="#1-types-classifications" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1. Types / Classifications</h2>
+<p>The CRM is a framework that must be extended via additional vocabularies and ontologies to be useful in specific circumstances.  The mechanism for doing this provided by the CRM is the predicate <code>crm:P2_has_type</code>, referred to as <code>classified_as</code> in the JSON-LD representation. The semantics of <code>crm:P2_has_type</code> are thus closer to "is classified as" or perhaps "has semantic tag", rather than "is an instance of the class".</p>
+<p>It is useful to compare this with the predicate <code>rdf:type</code>, or <code>type</code> in the JSON-LD representation, which is the formal class of the resource. This is used almost exclusively for the CRM defined classes, with as few extensions as possible.</p>
 <p>While any external vocabulary of terms can be used, the Getty Vocabularies are used whenever possible for consistency. The set of terms used in the model is listed <a href="/model/vocabs/">here</a>. </p>
 <p>Use cases for this pattern are in almost every example, but include:</p>
 <ul>
@@ -57,8 +57,8 @@
   <span class="nt">&quot;@context&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/ns/context/1/full.jsonld&quot;</span><span class="p">,</span> 
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/object/3&quot;</span><span class="p">,</span> 
   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ManMadeObject&quot;</span><span class="p">,</span> 
-  <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Painting&quot;</span><span class="p">,</span> 
-  <span class="nt">&quot;classified_as&quot;</span><span class="p">:</span> <span class="s2">&quot;aat:300033618&quot;</span>
+  <span class="nt">&quot;classified_as&quot;</span><span class="p">:</span> <span class="s2">&quot;aat:300033618&quot;</span><span class="p">,</span> 
+  <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Painting&quot;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -83,8 +83,8 @@
   <span class="nt">&quot;@context&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/ns/context/1/full.jsonld&quot;</span><span class="p">,</span> 
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/object/1&quot;</span><span class="p">,</span> 
   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ManMadeObject&quot;</span><span class="p">,</span> 
-  <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Painting&quot;</span><span class="p">,</span> 
   <span class="nt">&quot;classified_as&quot;</span><span class="p">:</span> <span class="s2">&quot;aat:300033618&quot;</span><span class="p">,</span> 
+  <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Painting&quot;</span><span class="p">,</span> 
   <span class="nt">&quot;made_of&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://vocab.getty.edu/aat/300015045&quot;</span><span class="p">,</span> 
     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Material&quot;</span><span class="p">,</span> 
@@ -93,8 +93,8 @@
   <span class="nt">&quot;part&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/object/1/part/1&quot;</span><span class="p">,</span> 
     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;PhysicalThing&quot;</span><span class="p">,</span> 
-    <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Canvas Support&quot;</span><span class="p">,</span> 
     <span class="nt">&quot;classified_as&quot;</span><span class="p">:</span> <span class="s2">&quot;aat:300014844&quot;</span><span class="p">,</span> 
+    <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Canvas Support&quot;</span><span class="p">,</span> 
     <span class="nt">&quot;made_of&quot;</span><span class="p">:</span> <span class="p">{</span>
       <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://vocab.getty.edu/aat/300014078&quot;</span><span class="p">,</span> 
       <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Material&quot;</span><span class="p">,</span> 
@@ -122,13 +122,13 @@
   <span class="nt">&quot;@context&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/ns/context/1/full.jsonld&quot;</span><span class="p">,</span> 
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/activity/1&quot;</span><span class="p">,</span> 
   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Activity&quot;</span><span class="p">,</span> 
+  <span class="nt">&quot;classified_as&quot;</span><span class="p">:</span> <span class="s2">&quot;aat:300054751&quot;</span><span class="p">,</span> 
   <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Auction&quot;</span><span class="p">,</span> 
   <span class="nt">&quot;consists_of&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/activity/1/part/1&quot;</span><span class="p">,</span> 
     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Activity&quot;</span><span class="p">,</span> 
     <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Auction of Lot&quot;</span>
-  <span class="p">},</span> 
-  <span class="nt">&quot;classified_as&quot;</span><span class="p">:</span> <span class="s2">&quot;aat:300054751&quot;</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -158,8 +158,8 @@
   <span class="nt">&quot;spatially_contains&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/place/1/part/1&quot;</span><span class="p">,</span> 
     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Place&quot;</span><span class="p">,</span> 
-    <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Gallery W204&quot;</span><span class="p">,</span> 
-    <span class="nt">&quot;classified_as&quot;</span><span class="p">:</span> <span class="s2">&quot;aat:300240057&quot;</span>
+    <span class="nt">&quot;classified_as&quot;</span><span class="p">:</span> <span class="s2">&quot;aat:300240057&quot;</span><span class="p">,</span> 
+    <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Gallery W204&quot;</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -193,7 +193,7 @@
 
 <p><a href="https://lod.shared-canvas.org/example/infoObject/1.json">Raw</a> | 
 <a href="http://json-ld.org/playground/#startTab=tab-expanded&amp;json-ld=https://lod.shared-canvas.org/example/infoObject/1.json">Playground</a></p>
-<h3 id="25-organizations"><a name="user-content-25-organizations" href="#25-organizations" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.5 Organizations</h3>
+<h3 id="25-organizations"><a name="user-content-25-organizations" href="#25-organizations" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.5. Organizations</h3>
 <p>Organizations are modeled as groups in CIDOC-CRM, which can have members that are part of that group.  The members can themselves be groups, allowing a hierarchy to be created in the same way as for parts of the classes above.</p>
 <p>Use cases for this pattern include:</p>
 <ul>
@@ -205,14 +205,14 @@
   <span class="nt">&quot;@context&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/ns/context/1/full.jsonld&quot;</span><span class="p">,</span> 
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/group/1&quot;</span><span class="p">,</span> 
   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Group&quot;</span><span class="p">,</span> 
+  <span class="nt">&quot;classified_as&quot;</span><span class="p">:</span> <span class="s2">&quot;aat:300312281&quot;</span><span class="p">,</span> 
   <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Museum&quot;</span><span class="p">,</span> 
   <span class="nt">&quot;current_or_former_member&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/group/1/part/1&quot;</span><span class="p">,</span> 
     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Group&quot;</span><span class="p">,</span> 
-    <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Paintings Department&quot;</span><span class="p">,</span> 
-    <span class="nt">&quot;classified_as&quot;</span><span class="p">:</span> <span class="s2">&quot;aat:300263534&quot;</span>
-  <span class="p">},</span> 
-  <span class="nt">&quot;classified_as&quot;</span><span class="p">:</span> <span class="s2">&quot;aat:300312281&quot;</span>
+    <span class="nt">&quot;classified_as&quot;</span><span class="p">:</span> <span class="s2">&quot;aat:300263534&quot;</span><span class="p">,</span> 
+    <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Paintings Department&quot;</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -235,13 +235,13 @@
   <span class="nt">&quot;@context&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/ns/context/1/full.jsonld&quot;</span><span class="p">,</span> 
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/object/2&quot;</span><span class="p">,</span> 
   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ManMadeObject&quot;</span><span class="p">,</span> 
-  <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Painting on Canvas&quot;</span><span class="p">,</span> 
   <span class="nt">&quot;classified_as&quot;</span><span class="p">:</span> <span class="s2">&quot;aat:300033618&quot;</span><span class="p">,</span> 
+  <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Painting on Canvas&quot;</span><span class="p">,</span> 
   <span class="nt">&quot;referred_to_by&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/object/2/statement/1&quot;</span><span class="p">,</span> 
     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;LinguisticObject&quot;</span><span class="p">,</span> 
-    <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Oil on Canvas&quot;</span><span class="p">,</span> 
-    <span class="nt">&quot;classified_as&quot;</span><span class="p">:</span> <span class="s2">&quot;aat:300264237&quot;</span>
+    <span class="nt">&quot;classified_as&quot;</span><span class="p">:</span> <span class="s2">&quot;aat:300264237&quot;</span><span class="p">,</span> 
+    <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Oil on Canvas&quot;</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>

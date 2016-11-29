@@ -12,8 +12,8 @@
   "transferred_title_of": {
     "id": "https://lod.shared-canvas.org/example/object/1", 
     "type": "ManMadeObject", 
-    "label": "Example Painting", 
-    "classified_as": "aat:300033618"
+    "classified_as": "aat:300033618", 
+    "label": "Example Painting"
   }, 
   "transferred_title_from": {
     "id": "https://lod.shared-canvas.org/example/actor/1", 

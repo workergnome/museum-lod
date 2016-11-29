@@ -54,7 +54,7 @@
 <p>In between the events there are periods of time in which the ownership does not change, but other interesting events may still occur, including change of custody (the painting is loaned out for an <a href="../exhibition/">exhibition</a>) or <a href="inventory.html">taking inventory</a> of the dealer's stock confirming that the painting is still in good condition and available for sale.</p>
 <p>Finally, there is documentary evidence of these events, such as sales catalogs or stock books, from which we can piece together the path of the object through history.</p>
 <h2 id="general-event-model"><a name="user-content-general-event-model" href="#general-event-model" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>General Event Model</h2>
-<p>The general model, as hinted at above, is to create a resource for the Activity or Event, and associate the participants with that resource. The relationships for time (<code>has_timespan</code>) and place (<code>took_place_at</code>) are relevant to Events that happen without the direct cause being a human action, and the relationship for the actor (<code>carried_out_by</code>) is added to those for human Activities.  The relationship to the Object is dependent on the type of Event or Activity, which are discussed in more detail below.</p>
+<p>The general model, as hinted at above, is to create a resource for the Activity or Event, and associate the participants with that resource. The relationships for time (<code>timespan</code>) and place (<code>took_place_at</code>) are relevant to Events that happen without the direct cause being a human action, and the relationship for the actor (<code>carried_out_by</code>) is added to those for human Activities.  The relationship to the Object is dependent on the type of Event or Activity, which are discussed in more detail below.</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;@context&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/ns/context/1/full.jsonld&quot;</span><span class="p">,</span> 
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/activity/2&quot;</span><span class="p">,</span> 
@@ -83,7 +83,7 @@
 <p><a href="https://lod.shared-canvas.org/example/activity/2.json">Raw</a> | 
 <a href="http://json-ld.org/playground/#startTab=tab-expanded&amp;json-ld=https://lod.shared-canvas.org/example/activity/2.json">Playground</a></p>
 <h2 id="object-creation"><a name="user-content-object-creation" href="#object-creation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Object Creation</h2>
-<p>The first activity in an object's provenance or lifecycle is its creation, or <code>Production</code>.  The relationship to the object that was produced by the activity (<code>has_produced</code>) is added to the general activity model, along with the time, location and actors.</p>
+<p>The first activity in an object's provenance or lifecycle is its creation, or <code>Production</code>.  The relationship to the object that was produced by the activity (<code>produced</code>) is added to the general activity model, along with the time, location and actors.</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;@context&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/ns/context/1/full.jsonld&quot;</span><span class="p">,</span> 
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/activity/3&quot;</span><span class="p">,</span> 
@@ -97,8 +97,8 @@
   <span class="nt">&quot;produced&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/object/1&quot;</span><span class="p">,</span> 
     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ManMadeObject&quot;</span><span class="p">,</span> 
-    <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Painting&quot;</span><span class="p">,</span> 
-    <span class="nt">&quot;classified_as&quot;</span><span class="p">:</span> <span class="s2">&quot;aat:300033618&quot;</span>
+    <span class="nt">&quot;classified_as&quot;</span><span class="p">:</span> <span class="s2">&quot;aat:300033618&quot;</span><span class="p">,</span> 
+    <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Painting&quot;</span>
   <span class="p">},</span> 
   <span class="nt">&quot;took_place_at&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/place/1&quot;</span><span class="p">,</span> 
@@ -134,8 +134,8 @@
   <span class="nt">&quot;transferred_title_of&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/object/1&quot;</span><span class="p">,</span> 
     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ManMadeObject&quot;</span><span class="p">,</span> 
-    <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Painting&quot;</span><span class="p">,</span> 
-    <span class="nt">&quot;classified_as&quot;</span><span class="p">:</span> <span class="s2">&quot;aat:300033618&quot;</span>
+    <span class="nt">&quot;classified_as&quot;</span><span class="p">:</span> <span class="s2">&quot;aat:300033618&quot;</span><span class="p">,</span> 
+    <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Painting&quot;</span>
   <span class="p">},</span> 
   <span class="nt">&quot;transferred_title_from&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/actor/1&quot;</span><span class="p">,</span> 
@@ -160,16 +160,27 @@
 <a href="http://json-ld.org/playground/#startTab=tab-expanded&amp;json-ld=https://lod.shared-canvas.org/example/activity/4.json">Playground</a></p>
 <h3 id="purchase"><a name="user-content-purchase" href="#purchase" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Purchase</h3>
 <p>A purchase is a common type of acquisition in which money is exchanged for the object.  The main activity is the transfer of the title for the object from the seller to the buyer, exactly as for any Acquisition.  The activity then consists of one or more related payments, without which the purchase would not be concluded.  This typically involves a payment from the seller to the buyer for the agreed upon price, but might include payments to or from others such as for shared ownership or payment of debts owed.</p>
-<p>The Payment activity has equivalent relationships for from (<code>paid_from</code>) and to (<code>paid_to</code>), as well as the amount of money paid.  The amount has a value (<code>value</code>) and a currency (<code>has_currency</code>).</p>
+<p>The Payment activity has equivalent relationships for from (<code>paid_from</code>) and to (<code>paid_to</code>), as well as the amount of money paid.  The amount has a value (<code>value</code>) and a currency (<code>has_currency</code>).  In the simple case, where the amount the object was offered for sale at (<code>offering_price</code>) is the same as it was sold for (<code>sales_price</code>) and there was a single transfer of money, for that amount (<code>paid_amount</code>).  However, these values might be different if in certain circumstances and are hence modeled separately.</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;@context&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/ns/context/1/full.jsonld&quot;</span><span class="p">,</span> 
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/activity/5&quot;</span><span class="p">,</span> 
   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Purchase&quot;</span><span class="p">,</span> 
+  <span class="nt">&quot;offering_price&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/money/1&quot;</span><span class="p">,</span> 
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;MonetaryAmount&quot;</span><span class="p">,</span> 
+    <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> 
+    <span class="nt">&quot;currency&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/money/2&quot;</span><span class="p">,</span> 
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Currency&quot;</span><span class="p">,</span> 
+      <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;dollars&quot;</span>
+    <span class="p">}</span>
+  <span class="p">},</span> 
+  <span class="nt">&quot;sales_price&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/money/1&quot;</span><span class="p">,</span> 
   <span class="nt">&quot;transferred_title_of&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/object/1&quot;</span><span class="p">,</span> 
     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ManMadeObject&quot;</span><span class="p">,</span> 
-    <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Painting&quot;</span><span class="p">,</span> 
-    <span class="nt">&quot;classified_as&quot;</span><span class="p">:</span> <span class="s2">&quot;aat:300033618&quot;</span>
+    <span class="nt">&quot;classified_as&quot;</span><span class="p">:</span> <span class="s2">&quot;aat:300033618&quot;</span><span class="p">,</span> 
+    <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Painting&quot;</span>
   <span class="p">},</span> 
   <span class="nt">&quot;transferred_title_from&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/actor/1&quot;</span><span class="p">,</span> 
@@ -184,16 +195,7 @@
   <span class="nt">&quot;consists_of&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/activity/6&quot;</span><span class="p">,</span> 
     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Payment&quot;</span><span class="p">,</span> 
-    <span class="nt">&quot;paid_amount&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/money/1&quot;</span><span class="p">,</span> 
-      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;MonetaryAmount&quot;</span><span class="p">,</span> 
-      <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> 
-      <span class="nt">&quot;currency&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/money/2&quot;</span><span class="p">,</span> 
-        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Currency&quot;</span><span class="p">,</span> 
-        <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;dollars&quot;</span>
-      <span class="p">}</span>
-    <span class="p">},</span> 
+    <span class="nt">&quot;paid_amount&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/money/1&quot;</span><span class="p">,</span> 
     <span class="nt">&quot;paid_from&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/actor/2&quot;</span><span class="p">,</span> 
     <span class="nt">&quot;paid_to&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lod.shared-canvas.org/example/actor/1&quot;</span>
   <span class="p">}</span>
@@ -204,6 +206,7 @@
 <p><a href="https://lod.shared-canvas.org/example/activity/5.json">Raw</a> | 
 <a href="http://json-ld.org/playground/#startTab=tab-expanded&amp;json-ld=https://lod.shared-canvas.org/example/activity/5.json">Playground</a></p>
 <h3 id="auctions"><a name="user-content-auctions" href="#auctions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Auctions</h3>
+<p>The individual purchase that is the result of auctioning an object is the same as the above Purchase model.  </p>
 <p>See <a href="auctions/">auctions</a>.</p>
 <h2 id="object-loss-or-destruction"><a name="user-content-object-loss-or-destruction" href="#object-loss-or-destruction" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Object Loss or Destruction</h2>
 <h3 id="loss"><a name="user-content-loss" href="#loss" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Loss</h3>
