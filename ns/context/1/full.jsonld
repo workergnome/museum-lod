@@ -8,15 +8,9 @@
     "schema": "http://schema.org/", 
     "skos": "http://www.w3.org/2004/02/skos/core#", 
     "pi": "http://lod.getty.edu/prov/", 
-    "aat": [
-      "http://vocab.getty.edu/aat/"
-    ], 
-    "ulan": [
-      "http://vocab.getty.edu/ulan/"
-    ], 
-    "tgn": [
-      "http://vocab.getty.edu/tgn/"
-    ], 
+    "aat": "http://vocab.getty.edu/aat/", 
+    "ulan": "http://vocab.getty.edu/ulan/", 
+    "tgn": "http://vocab.getty.edu/tgn/", 
     "id": {
       "@id": "@id", 
       "@type": "@id"
